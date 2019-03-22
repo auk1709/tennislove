@@ -12,8 +12,14 @@
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">会員登録</a></li>
-          <li><a href="#">ログイン</a></li>
+          <li>掲示板一覧</li>
+          <% if logged_in? %>
+            <li><%= link_to 'ユーザー詳細', user_path(current_user) %></li>
+            <li><%= link_to 'ログアウト', logout_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to '会員登録', signup_path %></li>
+            <li><%= link_to 'ログイン', login_path %></li>
+          <% end %>
         </ul>
       </div>
     </div>

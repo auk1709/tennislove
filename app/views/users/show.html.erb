@@ -1,0 +1,9 @@
+<h2>ユーザー詳細</h2>
+<% if @user.image_name.present? %>
+  <img src="<%= "/user_images/#{@user.image_name}" %>">
+<% else %>
+  <img src="<%= "/noimage.png" %>">
+<% end %>
+<h3><%= @user.name %></h3>
+<p><%= @user.profile %></p>
+<%= link_to '編集', edit_user_path %>
