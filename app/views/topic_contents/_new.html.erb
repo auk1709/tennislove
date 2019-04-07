@@ -1,0 +1,33 @@
+<div class="content-form">
+  <%= form_for(topic_content) do |f| %>
+    <%= hidden_field_tag :topic_id, @topic.id%>
+    
+    <% unless logged_in? %>
+    <div class="form-group">
+      <%= f.label :user_name, 'ニックネーム' %>
+      <%= f.text_field :user_name, class: 'form-control' %>
+    </div>
+    <% end %>
+    
+    <div class="form-group">
+      <%= f.text_area :content, class: 'form-control', placeholder: '投稿を作成する' %>
+    </div>
+    
+    <div class="form-group">
+      <label>
+        <span class="filelabel" title="ファイルを選択">
+           <img src="/images/camera-icon.png" width="30" height="30" alt="＋画像">
+           選択
+        </span>
+        <span class="filesend">
+          <%= f.fields_for :images do |image| %>
+            <%= image.file_field :content,　style: "display:none" %>
+          <% end %>
+        </span>
+      </label>
+    </div>
+    
+    
+    <%= f.submit '投稿する', class: 'btn btn-primary btn-block' %>
+  <% end %>
+</div>

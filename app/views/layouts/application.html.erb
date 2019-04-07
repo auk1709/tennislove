@@ -17,6 +17,21 @@
   <body>
     <%= render 'layouts/navbar' %>
 
+    <% if controller.controller_name == 'toppages' && controller.action_name == 'index' %>
+      <div class="top">
+        <div class="top-content">
+          <h1 class="catch">テニス好きあつまれ！</h1>
+          <h2 class="catch-sub">仲間を見つけて一緒にテニスしたり語り合おう</h2>
+          <% unless logged_in? %>
+            <ul>
+              <li class="btn btn-success btn-font"><%= link_to '会員登録', signup_path %></li>
+              <li class="btn btn-success btn-font"><%= link_to 'ログイン', login_path %></li>
+            </ul>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+
     <div class="container">
       <%= render 'layouts/flash_messages' %>
 

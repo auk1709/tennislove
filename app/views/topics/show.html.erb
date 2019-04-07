@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-sm-offset-2 col-sm-8">
+    <h2><%= @topic.title %></h2>
+    <p><%= @topic.content %></p>
+    <p>カテゴリ：<%= @topic.topic_category.name %></p>
+    <% if logged_in? %>
+      <%= render "topic_contents/new", topic_content: @topic_content, topic: @topic %>
+    <% end %>
+    
+    <% @topic_contents.each.with_index(1) do |topic_content,i| %>
+      <ul class="content-list">
+        <div class="row">
+          <div class="col-xs-2">
+            <li><img src="<%= "/user_images/#{topic_content.user.image_name}" %>" class="img-responsive"></li>
+            <li class="content-name"><%= topic_content.user_name %></li>
+          </div>
+          <div class="col-xs-10">
+            <li class="content-index">No.<%= i %></li>
+            <li><%= topic_content.content %></li>
+            <% if topic_content.images.present? %>
+              <li>
+                <ul class="list-inline">
+                  <% topic_content.images.each do |image|%>
+                    <li><%= image_tag image.content, class:"img-responsive" %></li>
+                  <% end %>
+                </ul>
+              </li>
+            </div>
+          </div>
+        <% end %>
+      </ul>
+      <hr style="width: 100%; color: black; height: 1px; background-color:black;" />
+    <% end %>
+  </div>
+</div>

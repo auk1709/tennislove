@@ -1,15 +1,119 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+@charset "utf-8";
+
+body{
+  font-family: 'Hiragino kaku Gothic ProN',
+                Meiryo;
+}
+
+.nav-margin{
+  margin: 0;
+}
+
+.container{
+  margin: 0 auto;
+  padding: 0;
+  
+}
+
+
+/* navbar */
+.navbar-inverse{
+  background-color: #31662E;
+  border: none;
+}
+
+.navbar-inverse .navbar-brand{
+  color: #fff;
+}
+
+.navbar-inverse .navbar-nav li a{
+  color: #ffffff;
+}
+
+.navbar-inverse .nabvar-nav li a:hover,
+.navbar-inverse .navbar-nav li a:focus{
+  background-color: #339933;
+}
+
+.nav-contents li{
+  border-left: solid 1px #fff;
+}
+
+.navbar-inverse .navbar-nav>.open>a,
+.navbar-inverse .navbar-nav>.open>a:focus,
+.navbar-inverse .navbar-nav>.open>a:hover{
+  background-color: #339933;
+}
+
+.navbar-inverse .navbar-nav .dropdown-menu>li>a{
+  color: #333;
+}
+
+
+/* toppage */
+.top{
+  background-image: url("/images/tennislove catch.jpg") ;
+  background-size: cover;
+  height: 700px;
+  margin: 0;
+  text-shadow: 1px 1px 2px #fff;
+}
+
+.top-content{
+  vertical-align: middle;
+  text-align: center;
+  padding: 100px;
+}
+
+.catch{
+  margin: 0;
+  color: #fff;
+  font-weight: bold;
+}
+
+.catch-sub{
+  color: #fff;
+}
+
+.btn-font{
+  color: #fff;
+  
+}
+
+.content-list{
+  list-style: none;
+}
+
+.content-name{
+  font-weight: bold;
+}
+
+/* フォーム */
+.filelabel:hover{
+  opacity: 0.5;
+  cursor: pointer; 
+}
+
+.filesend{
+  display: none;
+}
+
+.content-form{
+  border: solid 1px #f1f1f1;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+  padding: 10px;
+  
+  margin-bottom: 30px;
+}
+
+/* topic */
+
+/*.user-icon{
+  width: 100px;
+  height: 100px;
+}*/
+
+.content-index{
+  color: #999;
+}

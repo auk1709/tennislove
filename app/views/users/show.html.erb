@@ -1,9 +1,20 @@
-<h2>ユーザー詳細</h2>
-<% if @user.image_name.present? %>
-  <img src="<%= "/user_images/#{@user.image_name}" %>">
-<% else %>
-  <img src="<%= "/noimage.png" %>">
-<% end %>
-<h3><%= @user.name %></h3>
-<p><%= @user.profile %></p>
-<%= link_to '編集', edit_user_path %>
+<div class="row">
+  <div class="col-sm-offset-2">
+    <h2>ユーザー詳細</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-offset-2 col-sm-3">
+    <% if @user.image_name.present? %>
+      <img src="<%= "/user_images/#{@user.image_name}" %>" class="img-responsive">
+    <% else %>
+      <img src="<%= "/images/noimage.png" %>" class="img-responsive" style="width:100%">
+    <% end %>
+  </div>
+  <div class="col-sm-6">
+    <h3><%= @user.name %></h3>
+    <p><%= @user.profile %></p>
+  
+    <%= link_to '編集', edit_user_path %>
+  </div>
+</div>
